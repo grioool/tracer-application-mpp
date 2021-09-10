@@ -1,0 +1,1 @@
+{"ThreadsInfo":[{"Id":1,"ExecutionTime":108,"Methods":[{"Name":"MyMethod","ClassName":"Foo","ExecutionTime":108,"Methods":[{"Name":"InnerMethod","ClassName":"Bar","ExecutionTime":103,"Methods":[]}]}]},{"Id":5,"ExecutionTime":100,"Methods":[{"Name":"Method","ClassName":"Program","ExecutionTime":100,"Methods":[]}]}]}

@@ -1,0 +1,9 @@
+/Users/olga/RiderProjects/TracerApp/TracerLibrary/bin/Debug/netcoreapp3.1/TracerLibrary.deps.json
+/Users/olga/RiderProjects/TracerApp/TracerLibrary/bin/Debug/netcoreapp3.1/TracerLibrary.dll
+/Users/olga/RiderProjects/TracerApp/TracerLibrary/bin/Debug/netcoreapp3.1/TracerLibrary.pdb
+/Users/olga/RiderProjects/TracerApp/TracerLibrary/obj/Debug/netcoreapp3.1/TracerLibrary.csprojAssemblyReference.cache
+/Users/olga/RiderProjects/TracerApp/TracerLibrary/obj/Debug/netcoreapp3.1/TracerLibrary.AssemblyInfoInputs.cache
+/Users/olga/RiderProjects/TracerApp/TracerLibrary/obj/Debug/netcoreapp3.1/TracerLibrary.AssemblyInfo.cs
+/Users/olga/RiderProjects/TracerApp/TracerLibrary/obj/Debug/netcoreapp3.1/TracerLibrary.csproj.CoreCompileInputs.cache
+/Users/olga/RiderProjects/TracerApp/TracerLibrary/obj/Debug/netcoreapp3.1/TracerLibrary.dll
+/Users/olga/RiderProjects/TracerApp/TracerLibrary/obj/Debug/netcoreapp3.1/TracerLibrary.pdb

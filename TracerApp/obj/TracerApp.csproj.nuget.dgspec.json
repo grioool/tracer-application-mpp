@@ -1,0 +1,112 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/olga/RiderProjects/TracerApp/TracerApp/TracerApp.csproj": {}
+  },
+  "projects": {
+    "/Users/olga/RiderProjects/TracerApp/TracerApp/TracerApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/olga/RiderProjects/TracerApp/TracerApp/TracerApp.csproj",
+        "projectName": "TracerApp",
+        "projectPath": "/Users/olga/RiderProjects/TracerApp/TracerApp/TracerApp.csproj",
+        "packagesPath": "/Users/olga/.nuget/packages/",
+        "outputPath": "/Users/olga/RiderProjects/TracerApp/TracerApp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/olga/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/olga/RiderProjects/TracerApp/TracerLibrary/TracerLibrary.csproj": {
+                "projectPath": "/Users/olga/RiderProjects/TracerApp/TracerLibrary/TracerLibrary.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.412/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/olga/RiderProjects/TracerApp/TracerLibrary/TracerLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/olga/RiderProjects/TracerApp/TracerLibrary/TracerLibrary.csproj",
+        "projectName": "TracerLibrary",
+        "projectPath": "/Users/olga/RiderProjects/TracerApp/TracerLibrary/TracerLibrary.csproj",
+        "packagesPath": "/Users/olga/.nuget/packages/",
+        "outputPath": "/Users/olga/RiderProjects/TracerApp/TracerLibrary/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/olga/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.412/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

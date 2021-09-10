@@ -1,0 +1,15 @@
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/bin/Debug/netcoreapp3.1/TracerConsoleApplication.deps.json
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/bin/Debug/netcoreapp3.1/TracerConsoleApplication.runtimeconfig.json
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/bin/Debug/netcoreapp3.1/TracerConsoleApplication.runtimeconfig.dev.json
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/bin/Debug/netcoreapp3.1/TracerConsoleApplication.dll
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/bin/Debug/netcoreapp3.1/TracerConsoleApplication.pdb
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/bin/Debug/netcoreapp3.1/TracerLibrary.dll
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/bin/Debug/netcoreapp3.1/TracerLibrary.pdb
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/obj/Debug/netcoreapp3.1/TracerConsoleApplication.csprojAssemblyReference.cache
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/obj/Debug/netcoreapp3.1/TracerConsoleApplication.AssemblyInfoInputs.cache
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/obj/Debug/netcoreapp3.1/TracerConsoleApplication.AssemblyInfo.cs
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/obj/Debug/netcoreapp3.1/TracerConsoleApplication.csproj.CoreCompileInputs.cache
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/obj/Debug/netcoreapp3.1/TracerConsoleApplication.csproj.CopyComplete
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/obj/Debug/netcoreapp3.1/TracerConsoleApplication.dll
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/obj/Debug/netcoreapp3.1/TracerConsoleApplication.pdb
+/Users/olga/RiderProjects/TracerApp/TracerConsoleApplication/obj/Debug/netcoreapp3.1/TracerConsoleApplication.genruntimeconfig.cache
