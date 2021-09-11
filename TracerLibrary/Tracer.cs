@@ -1,5 +1,5 @@
 using System.Collections.Concurrent;
-using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace TracerLibrary
@@ -29,7 +29,7 @@ namespace TracerLibrary
         
         private ThreadTracer GetCurrentThreadTracer()
         {
-            int threadId = Thread.CurrentThread.ManagedThreadId;         
+            var threadId = Thread.CurrentThread.ManagedThreadId;         
             ThreadTracer threadTracer;
             _threadTracers.TryGetValue(threadId, out threadTracer);
             return threadTracer;
@@ -37,17 +37,13 @@ namespace TracerLibrary
         
         public void StopTrace()
         {
-            ThreadTracer threadTracer = GetCurrentThreadTracer();
+            var threadTracer = GetCurrentThreadTracer();
             threadTracer.StopTrace();
         }
 
         public TraceResult GetTraceResult()
         {
-            var threadsInfo = new List<ThreadInfo>();
-            foreach (var thread in _threadTracers)
-            {
-                threadsInfo.Add(new ThreadInfo(thread.Key, thread.Value.GetThreadMethodList()));
-            }
+            var threadsInfo = _threadTracers.Select(thread => new ThreadInfo(thread.Key, thread.Value.GetThreadMethodList())).ToList();
             return new TraceResult(threadsInfo);
         }
     }

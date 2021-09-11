@@ -8,50 +8,54 @@ namespace TracerLibrary
     {
         public ThreadTracer()
         {
-            MethodTracers = new Stack<MethodTracer>();
-            MethodInfoList = new List<MethodInfo>();
+            _methodTracers = new Stack<MethodTracer>();
+            _methodInfoList = new List<MethodInfo>();
         }
 
-        private readonly Stack<MethodTracer> MethodTracers;
+        private readonly Stack<MethodTracer> _methodTracers;
 
-        private MethodTracer CurrentMethodTracer;
+        private MethodTracer _currentMethodTracer;
 
-        private readonly List<MethodInfo> MethodInfoList;
+        private readonly List<MethodInfo> _methodInfoList;
 
         public List<MethodInfo> GetThreadMethodList()
         {
-            return MethodInfoList;
+            return _methodInfoList;
         }
 
         public void StartTrace()
         {
-            if (CurrentMethodTracer != null)
+            if (_currentMethodTracer != null)
             {
-                MethodTracers.Push(CurrentMethodTracer);
+                _methodTracers.Push(_currentMethodTracer);
             }
-            CurrentMethodTracer = new MethodTracer();
+            _currentMethodTracer = new MethodTracer();
 
-            CurrentMethodTracer.StartTrace();
+            _currentMethodTracer.StartTrace();
         }
 
         public void StopTrace()
         {
-            CurrentMethodTracer.StopTrace();
+            _currentMethodTracer.StopTrace();
+            
             StackTrace stackTrace = new StackTrace();
-            string methodName = stackTrace.GetFrame(2).GetMethod().Name;
-            string className = stackTrace.GetFrame(2).GetMethod().ReflectedType.Name;
-            double methodExecutionTime = CurrentMethodTracer.GetExecutionTime();
-            List<MethodInfo> methodInfos = CurrentMethodTracer.GetChildMethods();
+            var methodName = stackTrace.GetFrame(2)?.GetMethod()?.Name;
+            var reflectedType = stackTrace.GetFrame(2)?.GetMethod()?.ReflectedType;
+            
+            if (reflectedType == null) return;
+            
+            string className = reflectedType.Name;
+            double methodExecutionTime = _currentMethodTracer.GetExecutionTime();
+            List<MethodInfo> methodInfos = _currentMethodTracer.GetNestedMethods();
             MethodInfo methodInfo = new MethodInfo(methodName, className, methodExecutionTime, methodInfos);
-            if (MethodTracers.Count > 0)
+            if (_methodTracers.Count > 0)
             {
-                CurrentMethodTracer = MethodTracers.Pop();
-                CurrentMethodTracer.AddChildMethod(methodInfo);
+                _currentMethodTracer = _methodTracers.Pop();
+                _currentMethodTracer.AddNestedMethod(methodInfo);
             }
             else
             {
-                MethodInfoList.Add(methodInfo);
-                CurrentMethodTracer = null;
+                _methodInfoList.Add(methodInfo);
             }
         }
     }

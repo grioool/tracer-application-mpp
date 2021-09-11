@@ -10,10 +10,7 @@ namespace TracerLibrary
             ThreadsInfo = threadsInfo;
         }
 
-        public TraceResult()
-        {
-            
-        }
+        public TraceResult() {}
         public List<ThreadInfo> ThreadsInfo { set;  get; }
     }
 }

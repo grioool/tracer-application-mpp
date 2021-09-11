@@ -1,9 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=41e78231_002D5087_002D4cbd_002D99db_002Dbcc00a7da910/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Name" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::B6CF91A8-7B67-4226-82C2-B9BC52D18F54::.NETCoreApp,Version=v3.1::TracerLibrary.Tests.TracerLibraryTests.Name&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::B6CF91A8-7B67-4226-82C2-B9BC52D18F54::.NETCoreApp,Version=v3.1::TracerLibrary.Tests.TracerLibraryTests.MethodCount&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::B6CF91A8-7B67-4226-82C2-B9BC52D18F54::.NETCoreApp,Version=v3.1::TracerLibrary.Tests.TracerLibraryTests.ThreadCount&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::B6CF91A8-7B67-4226-82C2-B9BC52D18F54::.NETCoreApp,Version=v3.1::TracerLibrary.Tests.TracerLibraryTests.ExecutionTime&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B6CF91A8-7B67-4226-82C2-B9BC52D18F54::.NETCoreApp,Version=v3.1::TestTrace.TracerLibraryTests.MethodCount&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

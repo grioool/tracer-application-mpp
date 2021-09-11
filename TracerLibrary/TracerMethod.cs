@@ -1,44 +1,40 @@
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Reflection;
 
 namespace TracerLibrary
 {
     class MethodTracer
     {
+        private readonly Stopwatch _stopwatch;
+        private readonly List<MethodInfo> _nestedMethods;
         public MethodTracer()
         {
-            Stopwatch = new Stopwatch();
-            ChildMethods = new List<MethodInfo>();
-        }
-
-        private readonly Stopwatch Stopwatch;
-
-        private readonly List<MethodInfo> ChildMethods;
-
-        public void AddChildMethod(MethodInfo childMethod)
-        {
-            ChildMethods.Add(childMethod);
-        }
-
-        public List<MethodInfo> GetChildMethods()
-        {
-            return ChildMethods;
-        }
-
-        public double GetExecutionTime()
-        {
-            return Stopwatch.ElapsedMilliseconds;
+            _stopwatch = new Stopwatch();
+            _nestedMethods = new List<MethodInfo>();
         }
 
         public void StartTrace()
         {
-            Stopwatch.Start();
+            _stopwatch.Start();
+        }
+        public void AddNestedMethod(MethodInfo nestedMethod)
+        {
+            _nestedMethods.Add(nestedMethod);
+        }
+
+        public List<MethodInfo> GetNestedMethods()
+        {
+            return _nestedMethods;
+        }
+
+        public double GetExecutionTime()
+        {
+            return _stopwatch.ElapsedMilliseconds;
         }
 
         public void StopTrace()
         {
-            Stopwatch.Stop();
+            _stopwatch.Stop();
         }
     }
 }

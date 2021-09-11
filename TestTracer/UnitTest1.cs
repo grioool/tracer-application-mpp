@@ -3,19 +3,15 @@ using System.Threading;
 using NUnit.Framework;
 using TracerLibrary;
 
-namespace TracerLibrary.Tests
+namespace TestTrace
 {
     public class TracerLibraryTests
     {
-
-        public Tracer Tracer = new Tracer();
-
-        private readonly List<Thread> _threads = new List<Thread>();
-
         int ThreadsCount = 10;
         int MethodsCount = 10;
-
         int MillisecondsTimeout = 200;
+        public Tracer Tracer = new Tracer();
+        private readonly List<Thread> _threads = new List<Thread>();
 
         private void Method()
         {
@@ -23,16 +19,16 @@ namespace TracerLibrary.Tests
             Thread.Sleep(MillisecondsTimeout);
             Tracer.StopTrace();
         }
-
+        
         [Test]
-        public void ExecutionTime()
+        public void Name()
         {
-            Method();
+            Tracer.StartTrace();
+            Tracer.StopTrace();
             TraceResult traceResult = Tracer.GetTraceResult();
-            double methodTime = traceResult.ThreadsInfo[0].Methods[0].ExecutionTime;
-            double threadTime = traceResult.ThreadsInfo[0].ExecutionTime;
-            Assert.IsTrue(methodTime >= MillisecondsTimeout);
-            Assert.IsTrue(threadTime >= MillisecondsTimeout);
+            Assert.AreEqual(nameof(Name), traceResult.ThreadsInfo[0].Methods[0].Name);
+            Assert.AreEqual(nameof(TracerLibraryTests), traceResult.ThreadsInfo[0].Methods[0].ClassName);
+            Assert.AreEqual(Thread.CurrentThread.ManagedThreadId, traceResult.ThreadsInfo[0].Id);
         }
 
         [Test]
@@ -60,20 +56,8 @@ namespace TracerLibrary.Tests
             {
                 Method();
             }
-
             TraceResult traceResult = Tracer.GetTraceResult();
             Assert.AreEqual(MethodsCount, traceResult.ThreadsInfo[0].Methods.Count);
-        }
-
-        [Test]
-        public void Name()
-        {
-            Tracer.StartTrace();
-            Tracer.StopTrace();
-            TraceResult traceResult = Tracer.GetTraceResult();
-            Assert.AreEqual(nameof(Name), traceResult.ThreadsInfo[0].Methods[0].Name);
-            Assert.AreEqual(nameof(TracerLibraryTests), traceResult.ThreadsInfo[0].Methods[0].ClassName);
-            Assert.AreEqual(Thread.CurrentThread.ManagedThreadId, traceResult.ThreadsInfo[0].Id);
         }
     }
 }

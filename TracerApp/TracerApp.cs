@@ -47,7 +47,7 @@ namespace TracerApp
             }
         }
 
-        public void Method(object o)
+        public void M1(object o)
         {
             Tracer tracer = (Tracer) o;
             tracer.StartTrace();
@@ -58,17 +58,15 @@ namespace TracerApp
         static void Main(string[] args)
         {
             Program program = new Program();
-            Thread thread = new Thread(program.Method);
-
+            Thread thread = new Thread(program.M1);
             ITracer tracer = new Tracer();
             Foo foo = new Foo(tracer);
             foo.MyMethod();
             thread.Start(tracer);
             thread.Join();
-
-            TraceResult traceResult = tracer.GetTraceResult();
-
+            
             Writer writer = new Writer();
+            TraceResult traceResult = tracer.GetTraceResult();
             string resultJson = JsonSerializer.Serialize<TraceResult>(traceResult);
             XmlSerializer formatter = new XmlSerializer(typeof(TraceResult));
             using (FileStream fs = new FileStream("tracer.xml", FileMode.OpenOrCreate))
