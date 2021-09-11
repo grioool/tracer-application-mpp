@@ -27,7 +27,6 @@ namespace TracerLibrary
         {
             if (CurrentMethodTracer != null)
             {
-                //CurrentMethodTracer.StopTrace();
                 MethodTracers.Push(CurrentMethodTracer);
             }
             CurrentMethodTracer = new MethodTracer();

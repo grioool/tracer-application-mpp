@@ -5,6 +5,9 @@ namespace TracerLibrary
 {
     public class ThreadInfo
     {
+        
+        public ThreadInfo() {}
+        
         public ThreadInfo(int id, List<MethodInfo> threadMethods)
         {
             Id = id;
@@ -12,41 +15,34 @@ namespace TracerLibrary
             Methods = threadMethods;
         }
 
-        public int Id { get; private set; }
+        public int Id { set; get; }
+        public List<MethodInfo> Methods { set; get; }
 
         private double executionTime;
-
-        private double SummMethodsExecutionTime(MethodInfo methodInfo)
-        {
-            double time = 0;
-            time += methodInfo.ExecutionTime;
-          //  foreach (MethodInfo method in methodInfo.ChildMethods)
-            {
-          //      if (method.ChildMethods.Count > 0)
-                {
-          //          time += SummMethodsExecutionTime(method);
-                }
-         //       time += method.ExecutionTime;
-            }
-            return time;
-        }
-
+        
         public double ExecutionTime
         {
             get
             {
-                if (Methods.Count > 0)
-                {
-                    executionTime = SummMethodsExecutionTime(Methods[0]);
-                }
+                executionTime = SumMethodsExecutionTime(Methods[0]);
                 return executionTime;
             }
-            private set
+        }
+        
+        private double SumMethodsExecutionTime(MethodInfo methodInfo)
+        {
+            double time = 0;
+            time += methodInfo.ExecutionTime;
+            foreach (MethodInfo method in methodInfo.Methods)
             {
-                executionTime = value;
+                if (method.Methods.Count > 0)
+                {
+                    time += SumMethodsExecutionTime(method);
+                }
+                time += method.ExecutionTime;
             }
+            return time;
         }
 
-        public List<MethodInfo> Methods { get; private set; }
     }
 }

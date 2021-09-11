@@ -5,13 +5,15 @@ namespace TracerLibrary
     
     public class MethodInfo
     {
-        public string Name { get; }
+        public string Name { set;  get; }
 
-        public string ClassName { get; }
+        public string ClassName { set;  get; }
 
-        public double ExecutionTime { get; }
+        public double ExecutionTime { set;  get; }
 
-        public List<MethodInfo> Methods { get; }
+        public List<MethodInfo> Methods { set;  get; }
+        
+        protected MethodInfo() {}
 
         public MethodInfo(string name, string className, double executionTime, List<MethodInfo> methods)
         {
